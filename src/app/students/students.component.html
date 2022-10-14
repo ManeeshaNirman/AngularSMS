@@ -1,0 +1,74 @@
+<div class="card">
+
+    <div class="card-header">
+
+        {{title}} <br/> {{messege}}
+
+    </div>
+
+</div>
+
+<br/>
+
+<div class="card-body">
+
+    <div class="row">
+
+        <div class="col-md-2"> Talent Filter </div>
+        <div class="col-md-4"> <input type="text" placeholder="Enter Talent" [(ngModel)]="talentFilter" /> </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <h6>Filtered By : {{talentFilter}} </h6>
+    </div>
+</div>
+
+<div class="table-responsive">
+
+    <table class="table" *ngIf="students.length">
+
+        <thead>
+            <tr>
+
+                <th>
+
+                    <button class="btn btn-danger" (click)="togleIcon()">{{showIcon?"Hide":"Show"}} Avatar</button>
+                </th>
+
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Student Talent</th>
+                <th>Scholarship Balance</th>
+                <th>Attendence</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let student of filterStudents">
+                <td><img [src]="student.icon" width="50px" height="50px" *ngIf="showIcon" /></td>
+                <td>{{student.id}}</td>
+                <td>{{student.firstName}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.studentStatus}}</td>
+                <td>{{student.scholarshipsBalance| currency:"LKR":"symbol":"3.2-2"| lkrFormatter:"Rs: "}}</td>
+                <!----    <td>{{student.attendence}}</td>  -->
+
+                <td>
+                    <sm-progress-bar [attendence]="student.attendence" [firstName]="student.firstName" (attendenceClick)="onMessegeRecieved($event)">
+
+                    </sm-progress-bar>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

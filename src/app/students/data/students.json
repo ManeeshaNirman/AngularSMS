@@ -1,0 +1,75 @@
+[{
+        "id": "1",
+        "icon": "https://cdn-icons-png.flaticon.com/128/2784/2784461.png",
+        "firstName": "John",
+        "lastName": "adin",
+        "studentStatus": "Head Prefect",
+        "scholarshipsBalance": "15250.0",
+        "attendence": "50"
+    },
+    {
+        "id": "2",
+        "icon": "https://cdn-icons-png.flaticon.com/128/3429/3429417.png",
+        "firstName": "Symon",
+        "lastName": "Silva",
+        "studentStatus": "Monitor",
+        "scholarshipsBalance": "13250.0",
+        "attendence": "70"
+    },
+    {
+        "id": "3",
+        "icon": "https://cdn-icons-png.flaticon.com/128/2784/2784403.png",
+        "firstName": "Ureka",
+        "lastName": "catholin",
+        "studentStatus": "Deputy Head Prefect",
+        "scholarshipsBalance": "4500.0",
+        "attendence": "85"
+    },
+    {
+        "id": "4",
+        "icon": "https://cdn-icons-png.flaticon.com/128/3750/3750019.png",
+        "firstName": "Michel",
+        "lastName": "Anjilo",
+        "studentStatus": "None",
+        "scholarshipsBalance": "5500.0",
+        "attendence": "34"
+    },
+    {
+        "id": "5",
+        "icon": "https://cdn-icons-png.flaticon.com/128/1099/1099680.png",
+        "firstName": "Ryder",
+        "lastName": "Jusai",
+        "studentStatus": "President-CC",
+        "scholarshipsBalance": "14800.0",
+        "attendence": "64"
+    },
+    {
+        "id": "6",
+        "icon": "https://cdn-icons-png.flaticon.com/128/3429/3429402.png",
+        "firstName": "Ema",
+        "lastName": "Watson",
+        "studentStatus": "Monitress",
+        "scholarshipsBalance": "3500.0",
+        "attendence": "45"
+    },
+    {
+        "id": "7",
+        "icon": "https://cdn-icons-png.flaticon.com/128/5971/5971593.png",
+        "firstName": "Harry",
+        "lastName": "Witson",
+        "studentStatus": "Captain-Cricket",
+        "scholarshipsBalance": "6850.0",
+        "attendence": "95"
+    },
+    {
+        "id": "8",
+        "icon": "https://cdn-icons-png.flaticon.com/128/4841/4841005.png",
+        "firstName": "Juliot",
+        "lastName": "Potter",
+        "studentStatus": "Captain-Valleyball",
+        "scholarshipsBalance": "12600.0",
+        "attendence": "75"
+    }
+
+
+]
