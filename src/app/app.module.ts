@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
 import { LkrFormatterPipe } from './shared/lkr-formatter.pipe';
@@ -10,6 +11,8 @@ import { ProgressBarComponent } from './shared/progress-bar/progress-bar.compone
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CreateStudentsGuard } from './students/create-students.guard';
+import {initializeKeycloak} from './auth/app.init';
+import { AuthGuard } from './auth/keycloack.guard';
 
 
 @NgModule({
@@ -26,10 +29,11 @@ import { CreateStudentsGuard } from './students/create-students.guard';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    KeycloakAngularModule,
     RouterModule.forRoot([
 
       {path:'students',component:StudentsComponent},
-      {path:'students/:id',component:StudentsComponent,canActivate:[CreateStudentsGuard]},
+      {path:'students/:id',component:StudentsComponent,canActivate:[AuthGuard]},  //,canActivate:[CreateStudentsGuard]
       {path:'home',component:HomeComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       
@@ -37,7 +41,14 @@ import { CreateStudentsGuard } from './students/create-students.guard';
 
     ])
   ],
-  providers: [],
+  providers: [{
+    provide: APP_INITIALIZER,
+    useFactory: initializeKeycloak,
+    multi: true,
+    deps: [KeycloakService]
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// fav8Q~U~MrJLEJ2.0lJf40osmTcbnGUqsO8Nddy
